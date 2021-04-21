@@ -65,7 +65,26 @@ public class Nivell1 {
 		Ompliu els nous arrays lletra per lletra. 
 		Mostreu per consola els nous arrays amb els noms invertits (Ex: Barcelona - anolecraB).*/
 		
-		ArrayList<ArrayList<Character>> x = new ArrayList<ArrayList<Character>>();
+		int maxCiutatLength = 0;
+		
+		for (String i : arrayCiutats) {
+			if (i.length() >= maxCiutatLength) {
+				maxCiutatLength = i.length();
+			}
+		}
+			
+		char[][] arrayCaracters = new char[arrayCiutats.length][maxCiutatLength];
+		
+		for(int i = 0; i < arrayCiutats.length; i++) {
+			for(int j = 0; j < arrayCiutats[i].length(); j++) {
+				arrayCaracters[i][j] = arrayCiutats[i].charAt(j);
+			}
+		}
+		for(int i = 0; i < arrayCaracters.length; i++){
+	        System.out.println(arrayCaracters[i]);
+	    }
+		
+		/*ArrayList<ArrayList<Character>> x = new ArrayList<ArrayList<Character>>();
 	    
 	    for(int i = 0; i < arrayCiutats.length; i++) {
 	        x.add(new ArrayList<Character>());
@@ -77,7 +96,7 @@ public class Nivell1 {
 		}
 	    for(int i = 0; i < x.size(); i++){
 	        System.out.println(x.get(i));
-	    }
+	    }*/
 		
 	}
 
